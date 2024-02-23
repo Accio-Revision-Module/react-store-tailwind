@@ -1,0 +1,13 @@
+1. Create a basic UI with search of products
+2. I want to get products from the FakeStoreAPI (own Backend API)
+3. Wishlist feature
+4. Authentication
+5. Carts
+7. Every person can have multiple orders -> Payments
+
+
+What is the development cycle of a project?
+-> Multiple code environments:
+1. development
+2. testing/staging
+3. production

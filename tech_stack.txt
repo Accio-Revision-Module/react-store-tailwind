@@ -1,0 +1,6 @@
+1. React
+2. React router dom
+2. Tailwind CSS
+3. Redux Toolkit
+4. Firebase Firestore
+5. Firebase Authentication
