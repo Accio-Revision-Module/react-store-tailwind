@@ -28,16 +28,16 @@ function Home() {
 
       <hr />
 
-      <products className='flex flex-col justify-center items-center gap-10'>
+      <div className='flex flex-col justify-center items-center gap-10'>
         <h2 className='font-bold text-2xl'>Products</h2>
         {isLoading && <Loading />}
         {error && <Error e={error} />}
-        <list className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-4 gap-8">
           {products?.map((product) => (
             <Product key={product.id} product={product} />
           ))}
-        </list>
-      </products>
+        </div>
+      </div>
     </main>
   )
 }

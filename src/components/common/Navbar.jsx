@@ -51,19 +51,19 @@ function Navbar() {
 
   return (
     <div className="text-lg p-4 flex justify-between items-center w-full font-semibold">
-        <left className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center">
             {leftRoutes.map((e) => (
-                <Link className="hover:text-gray-500 transition" to={e.path}>{e.label}</Link>
+                <Link key={e.path} className="hover:text-gray-500 transition" to={e.path}>{e.label}</Link>
             ))}
-        </left>
-        <right className="flex gap-4 items-center">
+        </div>
+        <div className="flex gap-4 items-center">
             {rightRoutes.map((e) => (
-                <Link className="hover:text-gray-500 transition" to={e.path}>{e.label}</Link>
+                <Link key={e.path} className="hover:text-gray-500 transition" to={e.path}>{e.label}</Link>
             ))}
             {user && (
                 <button onClick={handleLogout} className="bg-red-500 hover:bg-transparent text-white hover:text-red-500 p-2 rounded cursor-pointer border-red-500 border-2 transition">Logout</button>
             )}
-        </right>
+        </div>
     </div>
   )
 }

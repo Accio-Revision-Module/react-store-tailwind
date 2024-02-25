@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import lazyLoad from './lazyLoad';
 import Loading from './components/common/Loading';
 import Navbar from './components/common/Navbar';
 import PrivateRoutes from './components/common/PrivateRoutes';
+import { useDispatch } from 'react-redux';
+import { fetchCartItems } from './store/actions/cartActions';
 
 const Home = lazyLoad("./pages/home");
 const Cart = lazyLoad("./pages/cart");
@@ -14,6 +16,12 @@ const Wishlist = lazyLoad("./pages/wishlist");
 const Profile = lazyLoad("./pages/profile");
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCartItems());
+  }, [])
+
   return (
     <Suspense fallback={<Loading />}>
       <Router>
